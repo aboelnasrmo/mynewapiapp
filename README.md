@@ -1,16 +1,25 @@
-# mynewapiapp
+# apiapp
 
-A new Flutter project.
+A new Flutter API project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Application to call API by using Flutter_bloc , and the following packages :
+  - build_runner
+  - dio
+  - get_it
+  - json_annotation
+  - json_serializable
+  - retrofit
+  - retrofit_generator
+  
+  
+  
+  The API used for the call is from the following link :
+  https://gorest.co.in/public/v2/
+  
+  the endpoint is : users
+  
+  
+  Thanks to Omar Ahmed 
+  https://www.linkedin.com/in/omarahmedx14/
