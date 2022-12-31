@@ -10,3 +10,9 @@ class GetAllusers extends ApiState {
 
   GetAllusers(this.allUsersList);
 }
+
+class GetUser extends ApiState {
+  final User usersDetails;
+
+  GetUser(this.usersDetails);
+}

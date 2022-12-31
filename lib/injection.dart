@@ -18,8 +18,8 @@ void initGetIt() {
 Dio createAndSetupDio() {
   Dio dio = Dio();
   dio
-    ..options.connectTimeout = 1 * 1000
-    ..options.receiveTimeout = 10 * 1000;
+    ..options.connectTimeout = 20 * 1000
+    ..options.receiveTimeout = 20 * 1000;
 
   dio.interceptors.add(LogInterceptor(
     responseBody: true,
