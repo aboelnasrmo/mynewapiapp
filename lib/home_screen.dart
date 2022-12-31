@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     //     id: 9998,
     //     gender: 'male',
     //     status: 'active'));
-    BlocProvider.of<ApiCubit>(context).deleteUser('4877');
+    BlocProvider.of<ApiCubit>(context).deleteUser('4873');
   }
 
   @override
