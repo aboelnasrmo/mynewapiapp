@@ -23,3 +23,4 @@ Application to call API by using Flutter_bloc , and the following packages :
   
   Thanks to Omar Ahmed 
   https://www.linkedin.com/in/omarahmedx14/
+  https://github.com/omarahmedx14
