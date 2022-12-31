@@ -21,12 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     // BlocProvider.of<ApiCubit>(context).getUsers();
     // BlocProvider.of<ApiCubit>(context).getUserDetails('3800');
-    BlocProvider.of<ApiCubit>(context).createNewUser(User(
-        name: 'Mo',
-        email: 'mo@mo.com',
-        id: 9998,
-        gender: 'male',
-        status: 'active'));
+    // BlocProvider.of<ApiCubit>(context).createNewUser(User(
+    //     name: 'Mo',
+    //     email: 'mo@mo.com',
+    //     id: 9998,
+    //     gender: 'male',
+    //     status: 'active'));
+    BlocProvider.of<ApiCubit>(context).deleteUser('4877');
   }
 
   @override
@@ -37,6 +38,30 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
+          //delete user
+
+          BlocBuilder<ApiCubit, ApiState>(
+            builder: (context, state) {
+              if (state is DeleteUser) {
+                // singleUser = state.data;
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      // child: Text(listOfChilds[index].childName.toString()),
+                      child: Text(state.data.toString()),
+                    ),
+                  ],
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          ),
+
           //Create new User
           BlocBuilder<ApiCubit, ApiState>(
             builder: (context, state) {

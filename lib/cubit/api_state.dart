@@ -22,3 +22,9 @@ class CreateNewUser extends ApiState {
 
   CreateNewUser(this.newUser);
 }
+
+class DeleteUser extends ApiState {
+  final dynamic data;
+
+  DeleteUser(this.data);
+}

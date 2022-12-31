@@ -29,4 +29,10 @@ class ApiCubit extends Cubit<ApiState> {
       emit(CreateNewUser(newUser));
     });
   }
+
+  void deleteUser(String id) {
+    myRepo.deleteUser(id).then((data) {
+      emit(DeleteUser(data));
+    });
+  }
 }

@@ -17,5 +17,9 @@ abstract class WebServices {
 
   @POST('users')
   Future<User> createNewUser(
-      @Body() User newUser, @Header('Authorization') String tolen);
+      @Body() User newUser, @Header('Authorization') String token);
+
+  @DELETE('users/{id}')
+  Future<dynamic> deleteUser(
+      @Path('id') String userId, @Header('Authorization') String token);
 }
