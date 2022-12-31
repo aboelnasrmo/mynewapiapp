@@ -17,4 +17,10 @@ class ApiCubit extends Cubit<ApiState> {
       emit(GetAllusers(usersList));
     });
   }
+
+  void getUserDetails(String userId) {
+    myRepo.getUserById(userId).then((userDetails) {
+      emit(GetUser(userDetails));
+    });
+  }
 }
