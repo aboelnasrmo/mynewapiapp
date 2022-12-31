@@ -23,4 +23,10 @@ class ApiCubit extends Cubit<ApiState> {
       emit(GetUser(userDetails));
     });
   }
+
+  void createNewUser(User newUser) {
+    myRepo.createNewUser(newUser).then((newUser) {
+      emit(CreateNewUser(newUser));
+    });
+  }
 }

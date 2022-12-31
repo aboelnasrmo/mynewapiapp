@@ -16,3 +16,9 @@ class GetUser extends ApiState {
 
   GetUser(this.usersDetails);
 }
+
+class CreateNewUser extends ApiState {
+  final User newUser;
+
+  CreateNewUser(this.newUser);
+}

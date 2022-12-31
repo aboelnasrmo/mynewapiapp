@@ -20,7 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     // BlocProvider.of<ApiCubit>(context).getUsers();
-    BlocProvider.of<ApiCubit>(context).getUserDetails('3800');
+    // BlocProvider.of<ApiCubit>(context).getUserDetails('3800');
+    BlocProvider.of<ApiCubit>(context).createNewUser(User(
+        name: 'Mo',
+        email: 'mo@mo.com',
+        id: 9998,
+        gender: 'male',
+        status: 'active'));
   }
 
   @override
@@ -31,10 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
+          //Create new User
           BlocBuilder<ApiCubit, ApiState>(
             builder: (context, state) {
-              if (state is GetUser) {
-                singleUser = state.usersDetails;
+              if (state is CreateNewUser) {
+                singleUser = state.newUser;
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -64,6 +71,44 @@ class _HomeScreenState extends State<HomeScreen> {
               }
             },
           ),
+
+          //Get single user
+          // BlocBuilder<ApiCubit, ApiState>(
+          //   builder: (context, state) {
+          //     if (state is GetUser) {
+          //       singleUser = state.usersDetails;
+          //       return Row(
+          //         mainAxisAlignment: MainAxisAlignment.start,
+          //         children: [
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             // child: Text(listOfChilds[index].childName.toString()),
+          //             child: Text(singleUser.id.toString()),
+          //           ),
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             child: Text(
+          //               singleUser.name.toString(),
+          //             ),
+          //           ),
+          //           const Spacer(),
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             child: Text(singleUser.status.toString(),
+          //                 style: const TextStyle(fontSize: 12)),
+          //           ),
+          //         ],
+          //       );
+          //     } else {
+          //       return const Center(
+          //         child: CircularProgressIndicator(),
+          //       );
+          //     }
+          //   },
+          // ),
+
+          // get All users
+
           // BlocBuilder<ApiCubit, ApiState>(
           //   builder: (context, state) {
           //     if (state is GetAllusers) {
