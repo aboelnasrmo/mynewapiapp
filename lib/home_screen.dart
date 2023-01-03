@@ -63,39 +63,39 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           //Create new User
-          BlocBuilder<ApiCubit, ApiState>(
-            builder: (context, state) {
-              if (state is CreateNewUser) {
-                singleUser = state.newUser;
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      // child: Text(listOfChilds[index].childName.toString()),
-                      child: Text(singleUser.id.toString()),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        singleUser.name.toString(),
-                      ),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(singleUser.status.toString(),
-                          style: const TextStyle(fontSize: 12)),
-                    ),
-                  ],
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            },
-          ),
+          // BlocBuilder<ApiCubit, ApiState>(
+          //   builder: (context, state) {
+          //     if (state is CreateNewUser) {
+          //       singleUser = state.newUser;
+          //       return Row(
+          //         mainAxisAlignment: MainAxisAlignment.start,
+          //         children: [
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             // child: Text(listOfChilds[index].childName.toString()),
+          //             child: Text(singleUser.id.toString()),
+          //           ),
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             child: Text(
+          //               singleUser.name.toString(),
+          //             ),
+          //           ),
+          //           const Spacer(),
+          //           Padding(
+          //             padding: const EdgeInsets.all(8.0),
+          //             child: Text(singleUser.status.toString(),
+          //                 style: const TextStyle(fontSize: 12)),
+          //           ),
+          //         ],
+          //       );
+          //     } else {
+          //       return const Center(
+          //         child: CircularProgressIndicator(),
+          //       );
+          //     }
+          //   },
+          // ),
 
           //Get single user
           // BlocBuilder<ApiCubit, ApiState>(
