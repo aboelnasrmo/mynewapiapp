@@ -22,13 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     // BlocProvider.of<ApiCubit>(context).getUsers();
-    // BlocProvider.of<ApiCubit>(context).getUserDetails('3800');
-    BlocProvider.of<ApiCubit>(context).createNewUser(User(
-        name: 'Mo',
-        email: 'mo@mo.com',
-        id: 9998,
-        gender: 'male',
-        status: 'active'));
+    BlocProvider.of<ApiCubit>(context).getUserDetails('4381');
+    // BlocProvider.of<ApiCubit>(context).createNewUser(User(
+    //     name: 'Mo',
+    //     email: 'mo@mo.com',
+    //     id: 9998,
+    //     gender: 'male',
+    //     status: 'active'));
     // BlocProvider.of<ApiCubit>(context).deleteUser('4873');
   }
 

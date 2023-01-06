@@ -17,9 +17,13 @@ class MyRepo {
     }
   }
 
-  Future<User> getUserById(String userId) async {
-    var response = await webServices.getUserByID(userId);
-    return User.fromJson(response.toJson());
+  Future<ApiResult<User>> getUserById(String userId) async {
+    try {
+      var response = await webServices.getUserByID(userId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
   }
 
   // new method of return no need to do from to json as retrofit aleardy doing that.

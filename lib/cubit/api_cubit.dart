@@ -27,11 +27,14 @@ class ApiCubit extends Cubit<ResultState<User>> {
     // });
   }
 
-  // void getUserDetails(String userId) {
-  //   myRepo.getUserById(userId).then((userDetails) {
-  //     emit(GetUser(userDetails));
-  //   });
-  // }
+  void getUserDetails(String userId) async {
+    var data = await myRepo.getUserById(userId);
+    data.when(success: (User user) {
+      emit(ResultState.success(user));
+    }, failure: (NetworkExceptions networkExceptions) {
+      emit(ResultState.error(networkExceptions));
+    });
+  }
 
   void createNewUser(User newUser) async {
     var data = await myRepo.createNewUser(newUser);
